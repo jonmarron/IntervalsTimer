@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     
     if (!localStorage.getItem(`trainings`)) {
-        localTrainings = localTrainings;
+        localTrainings = trainings;
         saveToLocal();
     } else {
         localTrainings = JSON.parse(localStorage.getItem(`trainings`));
