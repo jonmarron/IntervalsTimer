@@ -16,6 +16,8 @@ body {
     margin: 0;
     height:100vh;
     overflow: hidden;
+    display: flex;
+    
 }
 
 .container {
@@ -24,8 +26,8 @@ body {
     height:100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .logo {
@@ -35,13 +37,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 
     .graphic {
         position: relative;
-        top: 50px;
-        width: 80px;
-        height: 80px;
-        border-radius: 40px;
+        top: 55px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
         background: $logo-gradient;
         z-index: 991;
         animation: logo-rotate infinite 2s linear;
@@ -50,6 +53,7 @@ body {
         z-index: 999;
         text-align: center;
         letter-spacing: 2px;
+        font-size: 2.5rem;
     }
 }
 
@@ -67,6 +71,8 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    position: absolute;
+    bottom: 30%;
 }
 
 .input-button {
@@ -89,14 +95,6 @@ select{
     // appearance:none;
     &:focus {
         outline: none;
-    }
-    &:after {
-        content:'\f078';
-        font-family: "Font Awesome 6 free"; 
-        font-weight: 400;
-        position: absolute;
-        right: 20px;
-        top: 50%;
     }
 }
 option {
@@ -125,6 +123,7 @@ button {
     text-align: center;
     h1 {
         font-size: 3rem;
+        letter-spacing: .5rem;
     }
 }
 
@@ -151,12 +150,12 @@ button {
         background: $logo-gradient;
         transition: all 1s ease-in-out;
         &.train {
-
             animation: background-rotate infinite 1s linear;
         }
         &.rest {
-            opacity: .05;
+            opacity: .4;
             transform: scale(8);
+            background: conic-gradient(from 89.62deg at 50% 50%, #2b2b2b00 0deg, #2b2b2b 360deg);
         }
 
     }
@@ -179,5 +178,10 @@ button {
     }
     .container {
       width:30%;
+    }
+  }
+@media only screen and (max-width: 600px) {
+    body {
+        cursor: grab;
     }
   }

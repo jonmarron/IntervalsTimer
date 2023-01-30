@@ -4,11 +4,11 @@ const trainings = [
         name: '10/5 - 3 sets',
         train: {
             mins: 10,
-            secs: 5
+            secs: 10
         },
         rest: {
             mins: 01,
-            secs: 3
+            secs: 5
         },
         sets: 3
     },
@@ -17,7 +17,7 @@ const trainings = [
         name: '60/30 - 4 sets',
         train: {
             mins: 01,
-            secs: 00
+            secs: 60
         },
         rest: {
             mins: 00,
