@@ -52,3 +52,4 @@ const trainings = [
         sets: 20
     }
 ]
+

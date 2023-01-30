@@ -32,7 +32,7 @@ body {
 
 .logo {
     position: absolute;
-    top: 10%;
+    top: 5%;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -73,6 +73,10 @@ body {
     width: 100%;
     position: absolute;
     bottom: 30%;
+    &.create{
+        bottom: 20%;
+
+    }
 }
 
 .input-button {
@@ -82,26 +86,72 @@ body {
     justify-content: space-around;
     align-items: center;
 }
+.name-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+.select-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    // &:after {
+    //     content: "\f078";
+    //     font-family: FontAwesome;
+    //     color: $dark-green;
+    //     padding:8px;
+    //     position:relative;
+    //     right:45px;
+    //     top:32px;
+    //     z-index:10;
+    //     width:10%;
+    // }
+}
 
-select{
+select, input{
     cursor: pointer;
-    margin: 20px 0;
+    margin: 10px 0;
     position:relative;
     height: 60px;
-    width: 80%;
+    width: 100%;
     padding: 0 30px;
     color: $dark-green;
     border-radius: 30px; 
+    border: none;
     // appearance:none;
     &:focus {
         outline: none;
     }
 }
+
+.time-input {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    div {
+        width: 30%;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 option {
     color: $dark-green;
     padding: 20px 0;
 }
 
+.action-buttons {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
 button {
     cursor: pointer;
     display: flex;
@@ -109,10 +159,18 @@ button {
     align-items: center;
     height: 60px;
     padding: 0 25px;
-    background-color: transparent;
+    &.primary {
+        background-color: $background-white;
+        color: #254441;
+    }
+    &.secondary {
+        background-color: transparent;
+        color: $background-white;
+    }
     border: 2px solid $background-white;
     border-radius: 53px;
     transition: 0.5s ease-in-out;
+    text-transform: uppercase;
     // &:hover, &:active {
     //     background-color: $background-white;
     //     color: $dark-green;

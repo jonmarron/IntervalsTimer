@@ -26,7 +26,7 @@ body {
 
 .logo {
   position: absolute;
-  top: 10%;
+  top: 5%;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -65,6 +65,9 @@ body {
   position: absolute;
   bottom: 30%;
 }
+.user-input.create {
+  bottom: 20%;
+}
 
 .input-button {
   width: 100%;
@@ -74,23 +77,60 @@ body {
   align-items: center;
 }
 
-select {
+.name-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.select-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+select, input {
   cursor: pointer;
-  margin: 20px 0;
+  margin: 10px 0;
   position: relative;
   height: 60px;
-  width: 80%;
+  width: 100%;
   padding: 0 30px;
   color: #254441;
   border-radius: 30px;
+  border: none;
 }
-select:focus {
+select:focus, input:focus {
   outline: none;
+}
+
+.time-input {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+.time-input div {
+  width: 30%;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 option {
   color: #254441;
   padding: 20px 0;
+}
+
+.action-buttons {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
 button {
@@ -100,10 +140,18 @@ button {
   align-items: center;
   height: 60px;
   padding: 0 25px;
-  background-color: transparent;
   border: 2px solid #eeeeee;
   border-radius: 53px;
   transition: 0.5s ease-in-out;
+  text-transform: uppercase;
+}
+button.primary {
+  background-color: #eeeeee;
+  color: #254441;
+}
+button.secondary {
+  background-color: transparent;
+  color: #eeeeee;
 }
 
 .title {
