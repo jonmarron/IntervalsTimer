@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
                 if(trainTime < 0){
                     clearInterval(intervalTrain);
+                    if(setCounter === localTrainings[id].sets - 1){ setCounter++};
                     if(setCounter <= localTrainings[id].sets){
                         
                         startRestCountDown();
