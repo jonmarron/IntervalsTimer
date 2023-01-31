@@ -59,7 +59,17 @@ document.addEventListener('DOMContentLoaded', function(){
 
                 if(trainTime < 0){
                     clearInterval(intervalTrain);
-                    startRestCountDown();
+                    if(setCounter <= localTrainings[id].sets){
+                        
+                        startRestCountDown();
+                    } else {
+                        document.querySelector('#give-up').innerHTML = 'BACK';
+                        document.querySelector('.title h1').innerHTML = 'Congrats!';
+                        document.querySelector('.title h3').style.display = 'none';
+
+                        document.querySelector('#countdown').innerHTML = 'YOU<br>DID<br>IT!';
+                        document.querySelector('#countdown').style.margin = '10px 0px';
+                    }
                 }
 
             }, 1000)
@@ -90,18 +100,19 @@ document.addEventListener('DOMContentLoaded', function(){
                 if (restTime < 0) {
                     setCounter++;
                     clearInterval(intervalRest);
+                    startTrainCountdown();
                     
-                    if(setCounter <= localTrainings[id].sets){
-                        startTrainCountdown();
-                    } else {
-                        document.querySelector('#give-up').innerHTML = 'BACK';
-                        document.querySelector('.title h1').innerHTML = 'Congrats!';
-                        document.querySelector('.title h3').style.display = 'none';
+                    // if(setCounter <= localTrainings[id].sets){
+                    //     startTrainCountdown();
+                    // } else {
+                    //     document.querySelector('#give-up').innerHTML = 'BACK';
+                    //     document.querySelector('.title h1').innerHTML = 'Congrats!';
+                    //     document.querySelector('.title h3').style.display = 'none';
 
-                        document.querySelector('#countdown').innerHTML = 'YOU<br>DID<br>IT!';
-                        document.querySelector('#countdown').style.margin = '10px 0px';
-                        //ADD LAST SCREEN
-                    }
+                    //     document.querySelector('#countdown').innerHTML = 'YOU<br>DID<br>IT!';
+                    //     document.querySelector('#countdown').style.margin = '10px 0px';
+                    //     //ADD LAST SCREEN
+                    // }
                 }
             }, 1000)
         }
