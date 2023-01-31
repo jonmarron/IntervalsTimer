@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', function(){
         localTrainings = JSON.parse(localStorage.getItem(`trainings`));
     }
 
-    console.log(localTrainings);
-
     const startTimer = () => {
 
         let id = document.querySelector('select').value;
@@ -169,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     },
                     sets: parseInt(sets)
                 };
-                // window.localStorage.trainings.setItem('entry', newTraining);
+            
                 localTrainings.push(newTraining);
                 saveToLocal();
                 setStarterScreen();
