@@ -38,7 +38,7 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50px;
-  background: conic-gradient(from 89.62deg at 50% 50%, rgba(67, 170, 139, 0) 0deg, #43AA8B 360deg);
+  background: conic-gradient(from 0.18deg at 50% 50%, rgba(67, 170, 139, 0) 0deg, #43AA8B 360deg);
   z-index: 991;
   animation: logo-rotate infinite 2s linear;
 }
@@ -184,7 +184,7 @@ button.secondary {
   width: 320px;
   height: 320px;
   border-radius: 160px;
-  background: conic-gradient(from 89.62deg at 50% 50%, rgba(67, 170, 139, 0) 0deg, #43AA8B 360deg);
+  background: conic-gradient(from 0.18deg at 50% 50%, rgba(67, 170, 139, 0) 0deg, #43AA8B 360deg);
   transition: all 1s ease-in-out;
 }
 .background-loop div.train {

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function(){
     let localTrainings;
 
     const saveToLocal = () => {
-        window.localStorage.setItem(`trainings`, JSON.stringify(trainings));
+        window.localStorage.setItem(`trainings`, JSON.stringify(localTrainings));
     }
     
     if (!localStorage.getItem(`trainings`)) {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function(){
         
         const startTrainCountdown = () => {
             
-            let trainTime = localTrainings[id].train.secs;
+            let trainTime = localTrainings[id].train.secs -1;
 
             body.innerHTML = `
             <div class="container" id="second-screen">
@@ -67,6 +67,9 @@ document.addEventListener('DOMContentLoaded', function(){
                         document.querySelector('#give-up').innerHTML = 'BACK';
                         document.querySelector('.title h1').innerHTML = 'Congrats!';
                         document.querySelector('.title h3').style.display = 'none';
+                        
+                        document.querySelector('.background-loop div').classList.add('rest');
+                        document.querySelector('.background-loop div').classList.remove('train');
 
                         document.querySelector('#countdown').innerHTML = 'YOU<br>DID<br>IT!';
                         document.querySelector('#countdown').style.margin = '10px 0px';
@@ -78,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         const startRestCountDown = () => {
             
-            let restTime = localTrainings[id].rest.secs;
+            let restTime = localTrainings[id].rest.secs -1;
 
             document.querySelector('.background-loop div').classList.add('rest');
             document.querySelector('.background-loop div').classList.remove('train');
@@ -102,18 +105,6 @@ document.addEventListener('DOMContentLoaded', function(){
                     setCounter++;
                     clearInterval(intervalRest);
                     startTrainCountdown();
-                    
-                    // if(setCounter <= localTrainings[id].sets){
-                    //     startTrainCountdown();
-                    // } else {
-                    //     document.querySelector('#give-up').innerHTML = 'BACK';
-                    //     document.querySelector('.title h1').innerHTML = 'Congrats!';
-                    //     document.querySelector('.title h3').style.display = 'none';
-
-                    //     document.querySelector('#countdown').innerHTML = 'YOU<br>DID<br>IT!';
-                    //     document.querySelector('#countdown').style.margin = '10px 0px';
-                    //     //ADD LAST SCREEN
-                    // }
                 }
             }, 1000)
         }
@@ -129,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 <h1>Timey<br>Wimey</h1>
             </div>
             <div class="user-input create">
+                <p style="color:red;" id="error-notice"></p>
                 <div class="name-input">
                     <label for="name-training">Name your training:</label>
                     <input type="text" name="name-training" id="training-name" placeholder="Input name">
@@ -146,14 +138,43 @@ document.addEventListener('DOMContentLoaded', function(){
                         <label for="sets">Sets:</label>
                         <input type="number" name="sets" id="sets" min="1"></div>
                     </div>
-                <button class="secondary" id="create">CREATE & GO!</button>
+                <button class="secondary" id="create">CREATE</button>
             </div>
         </div>`;
 
         let createButton = document.querySelector('#create');
 
         createButton.addEventListener('click', function(){
-            // ADD FUNCTIONALITY HERE!
+            document.querySelector('#error-notice').innerHTML = '';
+            let name = document.querySelector('#training-name').value;
+            let trainSecs = document.querySelector('#train').value;
+            let restSecs = document.querySelector('#rest').value;
+            let sets = document.querySelector('#sets').value;
+            let index = localTrainings.length;
+
+            if ( name === '' || trainSecs === '' || restSecs === '' || sets === '') {
+                document.querySelector('#error-notice').innerHTML = 'Please input missing values';
+               
+            } else {
+                let newTraining = {
+                    id: index,
+                    name: name,
+                    train: {
+                        mins: 00,
+                        secs: parseInt(trainSecs)
+                    },
+                    rest: {
+                        mins: 00,
+                        secs: parseInt(restSecs)
+                    },
+                    sets: parseInt(sets)
+                };
+                // window.localStorage.trainings.setItem('entry', newTraining);
+                localTrainings.push(newTraining);
+                saveToLocal();
+                setStarterScreen();
+            }
+            
         })
     }
 
