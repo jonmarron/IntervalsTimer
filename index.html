@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timey Wimey</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hepta+Slab&display=swap" rel="stylesheet">
-    
-    <script src="https://kit.fontawesome.com/c1a23ee426.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style/main.css">
 
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Timey Wimey</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hepta+Slab&display=swap" rel="stylesheet">
+
+        <script src="https://kit.fontawesome.com/c1a23ee426.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style/main.css">
+
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
 
-    <script src="defaultTrainings.js"></script>
-    
-    <script src="index.js"></script>
-</head>
-<body>
-    <div class="container" id="first-screen">
-        <div class="logo">
-            <div class="graphic"></div>
-            <h1>Timey<br>Wimey</h1>
-        </div>
-        <div class="user-input">
-            <label for="select-training">Choose your training:</label>
-            <div class="input-button">
-                <div class="select-wrapper">
-                    <select name="select-training" id="select-training">
-                    </select>
-                </div>
-                <div class="action-buttons">
-                    <button class="primary">GO!</button>
-                    <button class="secondary">CREATE NEW</button>
+        <script src="defaultTrainings.js"></script>
+        <script src="screenConstants.js"></script>
+        <script defer src="index.js"></script>
+
+    </head>
+
+    <body>
+        <div class="container" id="first-screen">
+            <div class="logo">
+                <div class="graphic"></div>
+                <h1>Timey<br>Wimey</h1>
+            </div>
+            <div class="user-input">
+                <label for="select-training">Choose your training:</label>
+                <div class="input-button">
+                    <div class="select-wrapper">
+                        <select name="select-training" id="select-training">
+                        </select>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="primary">GO!</button>
+                        <button class="secondary">CREATE NEW</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
+
 </html>
