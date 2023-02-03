@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
     const body = document.querySelector('body');
+   
     let localTrainings;
 
     const saveToLocal = () => {
